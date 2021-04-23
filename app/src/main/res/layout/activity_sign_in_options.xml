@@ -29,6 +29,7 @@
         android:fontFamily="@font/alfa_slab_one"
         android:text="Hello There, Welcome back"
         android:transitionName="logo_text"
+        android:layout_marginTop="-45dp"
         android:textSize="35sp"
         android:textColor="@color/black"/>
 

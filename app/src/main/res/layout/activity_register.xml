@@ -15,6 +15,7 @@
         android:layout_height="150dp"
         android:fontFamily="cursive"
         android:gravity="center"
+        android:layout_marginTop="-20dp"
         android:text="Designer\nCompanion"
         android:textAlignment="center"
         android:textColor="@color/teal_700"
@@ -24,7 +25,8 @@
 
     <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:layout_marginTop="-20dp">
 
         <LinearLayout
             android:layout_width="match_parent"

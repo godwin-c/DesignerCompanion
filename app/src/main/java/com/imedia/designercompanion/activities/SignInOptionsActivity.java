@@ -64,5 +64,12 @@ public class SignInOptionsActivity extends AppCompatActivity {
                 }
             }
         });
+
+        login_button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(SignInOptionsActivity.this, DashboardActivity.class));
+            }
+        });
     }
 }

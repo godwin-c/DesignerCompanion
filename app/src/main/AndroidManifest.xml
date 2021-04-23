@@ -9,7 +9,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.DesignerCompanion">
-        <activity android:name=".activities.DashboardActivity"></activity>
+        <activity android:name=".activities.DashboardActivity"/>
         <activity android:name=".activities.RegisterActivity" />
         <activity android:name=".activities.SignInOptionsActivity" />
         <activity android:name=".MainActivity">
