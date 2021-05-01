@@ -12,7 +12,7 @@ import okhttp3.Response;
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
-class Rest_DB_Client {
+public class Rest_DB_Client {
     private static Retrofit retrofit = null;
     private static final String BASE_URL = "https://ebeano-7383.restdb.io/rest/";
 

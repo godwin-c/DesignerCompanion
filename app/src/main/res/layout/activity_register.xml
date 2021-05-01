@@ -4,8 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
     android:background="@drawable/custom_bg"
+    android:orientation="vertical"
     android:padding="20dp"
     tools:context=".activities.RegisterActivity">
 
@@ -13,9 +13,10 @@
         android:id="@+id/logo_text"
         android:layout_width="150dp"
         android:layout_height="150dp"
+        android:layout_gravity="center"
+        android:layout_marginTop="-30dp"
         android:fontFamily="cursive"
         android:gravity="center"
-        android:layout_marginTop="-20dp"
         android:text="Designer\nCompanion"
         android:textAlignment="center"
         android:textColor="@color/teal_700"
@@ -38,11 +39,11 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="-20dp"
-                android:transitionName="logo_text"
                 android:fontFamily="@font/alfa_slab_one"
                 android:text="Welcome"
                 android:textColor="@color/black"
-                android:textSize="35sp" />
+                android:textSize="35sp"
+                android:transitionName="logo_text" />
 
             <TextView
                 android:id="@+id/sign_in_text"
@@ -51,7 +52,7 @@
                 android:fontFamily="monospace"
                 android:text="Sign Up to Begin your Journey"
                 android:textSize="18sp"
-                android:transitionName="logo_desc"/>
+                android:transitionName="logo_desc" />
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -68,6 +69,7 @@
                     android:hint="Business Name">
 
                     <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/business_name_txt"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content" />
                 </com.google.android.material.textfield.TextInputLayout>
@@ -80,6 +82,7 @@
                     android:hint="Full Name">
 
                     <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/fullname_txt"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:inputType="textPersonName" />
@@ -95,6 +98,7 @@
                     app:counterMaxLength="15">
 
                     <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/username_txt"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content" />
                 </com.google.android.material.textfield.TextInputLayout>
@@ -107,9 +111,10 @@
                     android:hint="Email">
 
                     <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/email_txt"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:inputType="textEmailAddress"/>
+                        android:inputType="textEmailAddress" />
                 </com.google.android.material.textfield.TextInputLayout>
 
                 <com.google.android.material.textfield.TextInputLayout
@@ -122,20 +127,44 @@
                     app:passwordToggleEnabled="true">
 
                     <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/password_txt"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:inputType="textPassword" />
                 </com.google.android.material.textfield.TextInputLayout>
 
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="10dp"
+                    android:orientation="horizontal"
+                    android:paddingTop="5dp"
+                    android:paddingBottom="5dp">
+
+                    <Switch
+                        android:id="@+id/premium_or_standard_switch"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginLeft="5dp"
+                        android:text="Turn on Switch for Premium Account"
+                        android:textColor="@color/purple_500" />
+                </LinearLayout>
 
                 <Button
+                    android:id="@+id/sign_up_BTN"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="5dp"
                     android:layout_marginBottom="5dp"
-                    android:transitionName="button_tran"
                     android:backgroundTint="@color/teal_700"
-                    android:text="Sign Up" />
+                    android:text="Sign Up"
+                    android:transitionName="button_tran" />
 
                 <Button
                     android:id="@+id/link_to_login"

@@ -20,11 +20,14 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.android.material.navigation.NavigationView;
 import com.imedia.designercompanion.BuildConfig;
 import com.imedia.designercompanion.R;
+import com.imedia.designercompanion.classes.AppUser;
+import com.imedia.designercompanion.databases.LocalDatabase;
 import com.imedia.designercompanion.fragments.ConnectOthersFragment;
 import com.imedia.designercompanion.fragments.ContactUsFragment;
 import com.imedia.designercompanion.fragments.CustomersFragment;
@@ -39,12 +42,17 @@ public class DashboardActivity extends AppCompatActivity {
     private ViewPager viewpager;
     private LinearLayout logoutBTN;
 
+    AppUser appUser;
     Toolbar toolbar;
+    TextView logo_text;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_dashboard);
+
+        LocalDatabase.UserDatabase userDatabase = new LocalDatabase.UserDatabase(DashboardActivity.this);
+        appUser = userDatabase.getLoggedInUser();
 
         setupViewItems();
 
@@ -60,6 +68,7 @@ public class DashboardActivity extends AppCompatActivity {
         // Sync the toggle state after onRestoreInstanceState has occurred.
 
         toggle.syncState();
+
     }
 
     @Override
@@ -94,6 +103,8 @@ public class DashboardActivity extends AppCompatActivity {
 
         //Logout BTN
         logoutBTN = navigationView.findViewById(R.id.logout_BTN);
+
+        logo_text = findViewById(R.id.logo_text);
 
         setActionOnViewItems();
     }
@@ -161,6 +172,7 @@ public class DashboardActivity extends AppCompatActivity {
             }
         });
 
+        logo_text.setText(appUser.getBusiness_name());
     }
 
     private void changeFragment(Fragment fragment) {

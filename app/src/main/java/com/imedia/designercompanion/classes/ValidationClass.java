@@ -41,7 +41,7 @@ public class ValidationClass implements TextWatcher {
         }
     }
 
-    private boolean validatePassword() {
+    public boolean validatePassword() {
         if (((TextInputEditText)view).getText().toString().trim().isEmpty()) {
             ((TextInputEditText)view).setError("Password is required");
             view.requestFocus();
@@ -57,7 +57,7 @@ public class ValidationClass implements TextWatcher {
         return true;
     }
 
-    private boolean validateEmail() {
+    public boolean validateEmail() {
         if (((TextInputEditText)view).getText().toString().trim().isEmpty()) {
             ((TextInputEditText)view).setError("Email is required");
             view.requestFocus();
@@ -74,7 +74,7 @@ public class ValidationClass implements TextWatcher {
         return true;
     }
 
-    private boolean validateInput() {
+    public boolean validateInput() {
         if (((TextInputEditText)view).getText().toString().trim().isEmpty()) {
             ((TextInputEditText)view).setError("Field is required");
             view.requestFocus();
