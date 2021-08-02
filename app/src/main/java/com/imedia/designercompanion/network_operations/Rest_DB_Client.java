@@ -14,7 +14,7 @@ import retrofit2.converter.gson.GsonConverterFactory;
 
 public class Rest_DB_Client {
     private static Retrofit retrofit = null;
-    private static final String BASE_URL = "https://ebeano-7383.restdb.io/rest/";
+    private static final String BASE_URL = "https://ebeano-7383.restdb.io/";
 
     public static Retrofit getClient() {
         OkHttpClient.Builder httpClient = new OkHttpClient.Builder();

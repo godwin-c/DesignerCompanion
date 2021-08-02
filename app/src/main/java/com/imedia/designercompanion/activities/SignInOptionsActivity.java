@@ -203,7 +203,11 @@ public class SignInOptionsActivity extends AppCompatActivity {
                         userDatabase.storeUserData(appUser);
                         userDatabase.setUserLoggedIn(true);
 
-                        showSuccessMessage("You are welcome ");
+                        Toast.makeText(SignInOptionsActivity.this,"Welcome back",Toast.LENGTH_SHORT).show();
+
+                        startActivity(new Intent(SignInOptionsActivity.this, DashboardActivity.class));
+
+                       // showSuccessMessage("You are welcome ");
                     }else {
 
                         Log.d(TAG, "onResponse: " + response.body());

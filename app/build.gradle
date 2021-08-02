@@ -1,5 +1,8 @@
 plugins {
 	id 'com.android.application'
+//	apply plugin: 'kotlin-android'
+//	apply plugin: 'kotlin-android-extensions'
+//	apply plugin: 'kotlin-kapt'  // add this line
 }
 
 android {
@@ -8,10 +11,14 @@ android {
 
 	defaultConfig {
 		applicationId "com.imedia.designercompanion"
-		minSdkVersion 19
+		minSdkVersion 21
 		targetSdkVersion 29
 		versionCode 1
 		versionName "1.0"
+
+		buildFeatures {
+			dataBinding = true
+		}
 
 		testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
 	}
@@ -21,6 +28,9 @@ android {
 			minifyEnabled false
 			proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
 		}
+	}
+	buildFeatures {
+		dataBinding = true
 	}
 	compileOptions {
 		sourceCompatibility JavaVersion.VERSION_1_8
@@ -50,6 +60,16 @@ dependencies {
 
 	//AlertDialog
 	implementation 'com.github.salehyarahmadi:AndExAlertDialog:v1.0.1'
+
+	//Androidx Worker
+	implementation 'androidx.work:work-runtime:2.5.0'
+
+	//Image Picker
+	implementation 'com.github.SimformSolutionsPvtLtd:SSImagePicker:1.5'
+
+	// All:
+	implementation 'com.cloudinary:cloudinary-android:1.30.0'
+
 
 	testImplementation 'junit:junit:4.+'
 	androidTestImplementation 'androidx.test.ext:junit:1.1.2'

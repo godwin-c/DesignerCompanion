@@ -1,27 +1,19 @@
 package com.imedia.designercompanion.network_operations.models;
 
-import androidx.annotation.Nullable;
-
 import com.google.gson.annotations.SerializedName;
 
 import java.util.ArrayList;
 
-public class CustomerModelResponse {
-    @SerializedName("fullname")
-    private String fullname;
+public class MyDesignsModelResponse {
 
-    @SerializedName("phonenumber")
-    private String phonenumber;
+    @SerializedName("description")
+    private String description;
 
-    @SerializedName("email")
-    private String email;
+    @SerializedName("image_link")
+    private String image_link;
 
-    @SerializedName("address")
-    private String address;
-
-    @SerializedName("profile_photo")
-    @Nullable
-    private String profile_photo;
+    @SerializedName("business_name")
+    private String business_name;
 
     @SerializedName("_id")
     private String _id;
@@ -40,12 +32,12 @@ public class CustomerModelResponse {
     @SerializedName("_version")
     private int _version;
 
-    public CustomerModelResponse(String fullname, String phonenumber, String email, String address, @Nullable String profile_photo, String _id, String created, String changed, String _createdby, String _changedby, ArrayList<String> _keywords, String _tags, int _version) {
-        this.fullname = fullname;
-        this.phonenumber = phonenumber;
-        this.email = email;
-        this.address = address;
-        this.profile_photo = profile_photo;
+    public MyDesignsModelResponse(String description, String image_link, String business_name,
+                                  String _id, String created, String changed, String _createdby,
+                                  String _changedby, ArrayList<String> _keywords, String _tags, int _version) {
+        this.description = description;
+        this.image_link = image_link;
+        this.business_name = business_name;
         this._id = _id;
         this.created = created;
         this.changed = changed;
@@ -56,45 +48,28 @@ public class CustomerModelResponse {
         this._version = _version;
     }
 
-    public String getFullname() {
-        return fullname;
+    public String getDescription() {
+        return description;
     }
 
-    public void setFullname(String fullname) {
-        this.fullname = fullname;
+    public void setDescription(String description) {
+        this.description = description;
     }
 
-    public String getPhonenumber() {
-        return phonenumber;
+    public String getImage_link() {
+        return image_link;
     }
 
-    public void setPhonenumber(String phonenumber) {
-        this.phonenumber = phonenumber;
+    public void setImage_link(String image_link) {
+        this.image_link = image_link;
     }
 
-    public String getEmail() {
-        return email;
+    public String getBusiness_name() {
+        return business_name;
     }
 
-    public void setEmail(String email) {
-        this.email = email;
-    }
-
-    public String getAddress() {
-        return address;
-    }
-
-    public void setAddress(String address) {
-        this.address = address;
-    }
-
-    @Nullable
-    public String getProfile_photo() {
-        return profile_photo;
-    }
-
-    public void setProfile_photo(@Nullable String profile_photo) {
-        this.profile_photo = profile_photo;
+    public void setBusiness_name(String business_name) {
+        this.business_name = business_name;
     }
 
     public String get_id() {

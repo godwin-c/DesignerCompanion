@@ -1,5 +1,6 @@
 package com.imedia.designercompanion.fragments;
 
+import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.appcompat.widget.SearchView;
@@ -11,7 +12,9 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.imedia.designercompanion.R;
+import com.imedia.designercompanion.activities.CreateCustomerActivity;
 
 
 public class CustomersFragment extends Fragment {
@@ -19,6 +22,7 @@ public class CustomersFragment extends Fragment {
     SearchView searchView;
     TextView emptyTV;
     RecyclerView recyclerView;
+    FloatingActionButton fab;
 
     public CustomersFragment() {
     }
@@ -37,7 +41,21 @@ public class CustomersFragment extends Fragment {
         searchView = view.findViewById(R.id.frag_customer_searchview);
         emptyTV = view.findViewById(R.id.empty_data_view);
         recyclerView = view.findViewById(R.id.frag_customers_recycler_view);
-        
+        fab = view.findViewById(R.id.fab);
+
+        setActionOnViews();
+
         return view;
     }
+
+    private void setActionOnViews() {
+        fab.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(getContext(), CreateCustomerActivity.class));
+            }
+        });
+    }
+
+
 }

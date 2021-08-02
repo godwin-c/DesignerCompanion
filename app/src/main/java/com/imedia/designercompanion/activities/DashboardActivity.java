@@ -1,6 +1,7 @@
 package com.imedia.designercompanion.activities;
 
 import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
@@ -32,6 +33,7 @@ import com.imedia.designercompanion.fragments.ConnectOthersFragment;
 import com.imedia.designercompanion.fragments.ContactUsFragment;
 import com.imedia.designercompanion.fragments.CustomersFragment;
 import com.imedia.designercompanion.fragments.HomeFragment;
+import com.imedia.designercompanion.fragments.MyDesignsFragment;
 import com.imedia.designercompanion.fragments.MyProfileFragment;
 
 public class DashboardActivity extends AppCompatActivity {
@@ -259,4 +261,23 @@ public class DashboardActivity extends AppCompatActivity {
 
     }
 
+    @Override
+    public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
+       super.onRequestPermissionsResult(requestCode, permissions, grantResults);
+        Fragment fragment = getSupportFragmentManager().findFragmentById(R.id.designs_frag);
+        fragment.onRequestPermissionsResult(requestCode,permissions,grantResults);
+    }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+
+        //Fragment fragment = getSupportFragmentManager().findFragmentById(R.id.overview_coordinator_layout);
+        //Fragment fragment1 = fragment.getChildFragmentManager().findFragmentById(R.id.designs_frag);
+//        Fragment fragment = getSupportFragmentManager().findFragmentById(R.id.overview_coordinator_layout);
+//        fragment.onActivityResult(requestCode,resultCode,data);
+
+//        MyDesignsFragment myDesignsFragment = (MyDesignsFragment) getSupportFragmentManager().findFragmentById(R.id.designs_frag);
+//        myDesignsFragment.onActivityResult(requestCode,resultCode,data);
+    }
 }

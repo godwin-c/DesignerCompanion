@@ -12,10 +12,18 @@ public class CustomerModel {
     @SerializedName("email")
     private String email;
 
-    public CustomerModel(String fullname, String phonenumber, String email) {
+   @SerializedName("address")
+    private String address;
+
+   @SerializedName("profile_photo")
+    private String profile_photo;
+
+    public CustomerModel(String fullname, String phonenumber, String email, String address, String profile_photo) {
         this.fullname = fullname;
         this.phonenumber = phonenumber;
         this.email = email;
+        this.address = address;
+        this.profile_photo = profile_photo;
     }
 
     public String getFullname() {
@@ -40,5 +48,21 @@ public class CustomerModel {
 
     public void setEmail(String email) {
         this.email = email;
+    }
+
+    public String getAddress() {
+        return address;
+    }
+
+    public void setAddress(String address) {
+        this.address = address;
+    }
+
+    public String getProfile_photo() {
+        return profile_photo;
+    }
+
+    public void setProfile_photo(String profile_photo) {
+        this.profile_photo = profile_photo;
     }
 }

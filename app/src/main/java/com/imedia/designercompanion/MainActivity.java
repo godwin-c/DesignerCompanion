@@ -15,7 +15,9 @@ import android.view.animation.AnimationUtils;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.imedia.designercompanion.activities.DashboardActivity;
 import com.imedia.designercompanion.activities.SignInOptionsActivity;
+import com.imedia.designercompanion.databases.LocalDatabase;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -48,16 +50,28 @@ public class MainActivity extends AppCompatActivity {
 
                 // do something
                 Intent intent = new Intent(MainActivity.this, SignInOptionsActivity.class);
+                Intent intent1 = new Intent(MainActivity.this, DashboardActivity.class);
 
                 Pair[] pairs = new Pair[2];
                 pairs[0] = new Pair<View,String>(imv_fem_2,"logo_image");
                 pairs[1] = new Pair<View,String>(app_name_logo,"logo_text");
 
-                if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.LOLLIPOP) {
-                    ActivityOptions activityOptions = ActivityOptions.makeSceneTransitionAnimation(MainActivity.this, pairs);
-                    startActivity(intent, activityOptions.toBundle());
-                    finish();
+                LocalDatabase.UserDatabase userDatabase = new LocalDatabase.UserDatabase(MainActivity.this);
+                if (userDatabase.userIsLoggedIn()){
+                    if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.LOLLIPOP) {
+                        ActivityOptions activityOptions = ActivityOptions.makeSceneTransitionAnimation(MainActivity.this, pairs);
+                        startActivity(intent1, activityOptions.toBundle());
+                        finish();
+                    }
+                }else {
+                    if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.LOLLIPOP) {
+                        ActivityOptions activityOptions = ActivityOptions.makeSceneTransitionAnimation(MainActivity.this, pairs);
+                        startActivity(intent, activityOptions.toBundle());
+                        finish();
+                    }
                 }
+
+
             }
         },SPLASH_SCREEN_TIME);
     }
